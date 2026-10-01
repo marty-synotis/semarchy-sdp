@@ -1,0 +1,6 @@
+_type: Model
+_package: PersonModel
+_name: PersonModel
+label: Person Model
+modelConfiguration:
+  type: POSTGRESQL
