@@ -1,5 +1,5 @@
 _type: DataRetentionPolicy
-_package: PersonModel
+_package: RefPerson
 _name: RetentionPolicy
 deletionsDuration: 0
 deletionsType: FOREVER

@@ -1,0 +1,195 @@
+_package: RefPerson.entities
+_type: Entity
+_name: Person
+label: Personne
+pluralLabel: Personnes
+physicalTableName: PERSON
+iconUrl: images://mdi/account.svg
+description: "Répertoire des personnes physiques"
+documentation: "Entité FuzzyMatch pour gérer le référentiel des personnes avec déduplication automatique"
+historizeGolden: true
+historizeMaster: true
+enableDelete: true
+attributes:
+  # -- Clé primaire (Golden ID) --
+  - _type: EntityAttribute
+    _name: PersonId
+    label: ID Personne
+    physicalName: PERSON_ID
+    dataType: LongInteger          # String si mode UUID
+    precision: 1
+    mandatory: true
+    description: "Identifiant du golden record (généré par le système)"
+  # -- Attributs principaux obligatoires --
+  - _type: EntityAttribute
+    _name: LastName
+    label: Nom
+    physicalName: LAST_NAME
+    dataType: String
+    length: 100
+    mandatory: true
+    mandatoryValidationScope: PRE_POST
+    mandatoryValidationLabel: "Nom is mandatory"
+    searchable: true
+    description: "Nom de famille"
+
+  - _type: EntityAttribute
+    _name: FirstName
+    label: Prénom
+    physicalName: FIRST_NAME
+    dataType: String
+    length: 100
+    mandatory: true
+    mandatoryValidationScope: PRE_POST
+    mandatoryValidationLabel: "Prénom is mandatory"
+    searchable: true
+    description: "Prénom"
+
+  - _type: EntityAttribute
+    _name: BirthDate
+    label: Date de Naissance
+    physicalName: BIRTH_DATE
+    dataType: Date
+    mandatory: true
+    mandatoryValidationScope: PRE_POST
+    mandatoryValidationLabel: "Birthdate is mandatory"
+    searchable: true
+    description: "Date de naissance"
+
+  - _type: EntityAttribute
+    _name: AVSNumber
+    label: Numéro AVS
+    physicalName: AVS_NUMBER
+    dataType: String
+    length: 20
+    mandatory: true
+    mandatoryValidationScope: PRE_POST
+    mandatoryValidationLabel: "AVS number is mandatory"
+    searchable: true
+    description: "Numéro AVS (Assurance Vieillesse et Survivants)"
+
+  # -- Adresse complexe --
+  - _type: EntityAttribute
+    _name: Address
+    label: Adresse
+    physicalName: PER
+    dataType: RefPerson.complex_types.Address
+    mandatory: true
+    mandatoryValidationScope: PRE_POST
+    mandatoryValidationLabel: "Address is mandatory"
+    searchable: true
+    description: "Adresse principale de la personne"
+    lovValidationScope: PRE_CONSO
+
+  # -- Attributs supplémentaires --
+  - _type: EntityAttribute
+    _name: Employer
+    label: Employeur
+    physicalName: EMPLOYER
+    dataType: String
+    length: 200
+    mandatory: false
+    searchable: true
+    description: "Nom de l'employeur"
+
+  - _type: EntityAttribute
+    _name: Salary
+    label: Salaire
+    physicalName: SALARY
+    dataType: Decimal
+    precision: 15
+    scale: 2
+    mandatory: false
+    searchable: false
+    description: "Salaire annuel"
+
+  # -- Attributs dérivés --
+  - _type: EntityAttribute
+    _name: FullName
+    label: Nom Complet
+    physicalName: FULL_NAME
+    dataType: String
+    length: 250
+    mandatory: false
+    searchable: true
+    description: "Nom complet (Prénom + Nom)"
+
+  - _type: EntityAttribute
+    _name: Age
+    label: Âge
+    physicalName: AGE
+    dataType: Integer
+    precision: 3
+    mandatory: false
+    searchable: false
+    description: "Âge calculé"
+
+  - _type: EntityAttribute
+    _name: LastUpdateDate
+    label: Date de Dernière Mise à Jour
+    physicalName: LAST_UPDATE_DATE
+    dataType: Timestamp
+    mandatory: false
+    searchable: false
+    description: "Date de la dernière mise à jour"
+    precision: 0
+
+primaryKey: RefPerson.entities.Person.PersonId
+sourceIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+entityType: FUZZY_MATCHED
+matcher:
+  _type: SemQLMatcher
+  _name: PersonMatcher
+  description: "Matcher pour dédupliquer les personnes basé sur Nom, Prénom, Date de Naissance et Numéro AVS"
+  matchRules:
+    # Règle 1: Match exact sur AVSNumber (score très élevé)
+    - _type: SemQLMatchRule
+      _name: ExactAVSMatch
+      label: Match Exact AVS
+      condition: Record1.AVSNumber = Record2.AVSNumber
+      matchScore: 100
+      usingMatchOn: false
+    # Règle 2: Match sur Nom + Prénom + Date de Naissance (score élevé)
+    - _type: SemQLMatchRule
+      _name: FullNameAndBirthMatch
+      label: Match Nom Prénom Date Naissance
+      condition: Record1.LastName = Record2.LastName AND Record1.FirstName = Record2.FirstName AND Record1.BirthDate = Record2.BirthDate
+      matchScore: 95
+      usingMatchOn: false
+    # Règle 3: Match sur Nom + Prénom avec similarité (score moyen)
+    - _type: SemQLMatchRule
+      _name: SimilarNameMatch
+      label: Match Similarité Nom Prénom
+      condition: SEM_EDIT_DISTANCE_SIMILARITY(Record1.LastName, Record2.LastName) > 0.85 AND SEM_EDIT_DISTANCE_SIMILARITY(Record1.FirstName, Record2.FirstName) > 0.85
+      matchScore: 85
+      usingMatchOn: false
+    # Règle 4: Match sur Nom + Date de Naissance (score moyen-faible)
+    - _type: SemQLMatchRule
+      _name: NameAndBirthMatch
+      label: Match Nom Date Naissance
+      condition: Record1.LastName = Record2.LastName AND Record1.BirthDate = Record2.BirthDate
+      matchScore: 80
+      usingMatchOn: false
+    # Règle 5: Match sur AVSNumber avec similarité (pour les erreurs de saisie)
+    - _type: SemQLMatchRule
+      _name: SimilarAVSMatch
+      label: Match Similarité AVS
+      condition: SEM_EDIT_DISTANCE_SIMILARITY(Record1.AVSNumber, Record2.AVSNumber) > 0.9
+      matchScore: 90
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 70
+  mergeThresholdMergingUnconfirmed: 75
+  mergeThresholdMergingConfirmed: 85
+  mergeThresholdMergingConfirmedWithUnconfirmed: 80
+  mergeThresholdMergingUnconfirmedWithNewMasters: 75
+  mergeThresholdMergingConfirmedWithNewMasters: 90
+  mergeThresholdRemergingPreviouslySplit: 95
+  autoConfirmGoldenThreshold: 95
+  autoConfirmSingletons: false

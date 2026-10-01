@@ -1,0 +1,6 @@
+_name: Impots
+_type: Publisher
+_package: RefPerson.publishers
+label: Impots
+active: true
+code: IMPOTS

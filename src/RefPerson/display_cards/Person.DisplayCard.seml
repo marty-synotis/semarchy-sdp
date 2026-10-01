@@ -1,0 +1,17 @@
+_name: Person
+_package: RefPerson.display_cards
+_type: DisplayCard
+entity: RefPerson.entities.Person
+default: true
+primaryTextExpression: LastName
+supportingTextExpression: FirstName
+primaryImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

@@ -1,0 +1,47 @@
+_package: PersonModel.list_of_values
+_type: LOVType
+_name: Canton
+label: Canton
+pluralLabel: Cantons
+description: "Liste des cantons suisses"
+iconUrl: images://mdi/map.svg
+attributes:
+  - _type: LOVAttribute
+    _name: CantonID
+    label: Canton ID
+    physicalName: CANTON_ID
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+    description: "Identifiant technique"
+
+  - _type: LOVAttribute
+    _name: Code
+    label: Code Canton
+    physicalName: CANTON_CODE
+    dataType: String
+    length: 2
+    mandatory: true
+    searchable: true
+    description: "Code officiel du canton (VD, GE, ZH, etc.)"
+
+  - _type: LOVAttribute
+    _name: Nom
+    label: Nom Canton
+    physicalName: CANTON_NOM
+    dataType: String
+    length: 50
+    mandatory: true
+    searchable: true
+    description: "Nom complet du canton"
+
+  - _type: LOVAttribute
+    _name: NomAbrege
+    label: Nom Abréviation
+    physicalName: CANTON_NOM_ABREGE
+    dataType: String
+    length: 20
+    mandatory: false
+    searchable: true
+    description: "Nom abrévié du canton"

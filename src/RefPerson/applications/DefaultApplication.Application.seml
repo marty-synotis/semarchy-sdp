@@ -1,4 +1,4 @@
-_package: PersonModel.applications
+_package: RefPerson.applications
 _type: Application
 _name: DefaultApplication
 label: Default Application
@@ -11,7 +11,7 @@ favIcon: images://default/dm-favicon.svg
 sortStrategy: POSITION
 historyBrowsingEnabled: false
 historyBrowsingRequiredRole: ""
-defaultAction: PersonModel.applications.DefaultApplication.Root
+defaultAction: RefPerson.applications.DefaultApplication.Root
 documentationConfig:
   documentation: ""
 globalSearchConfig:
@@ -22,7 +22,7 @@ navDrawer:
     _name: RootFolder
     dividerVisible: false
     labelVisible: false
-    linkedFolder: PersonModel.applications.DefaultApplication.Root
+    linkedFolder: RefPerson.applications.DefaultApplication.Root
 rootFolder:
   _type: FolderAction
   _name: Root

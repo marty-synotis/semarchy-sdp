@@ -1,0 +1,56 @@
+_package: RefPerson.complex_types
+_type: ComplexType
+_name: Address
+label: Adresse
+description: "Type complexe représentant une adresse postale"
+attributes:
+  - _type: EntityAttribute
+    _name: StreetName
+    label: Rue/Avenue
+    physicalName: STREET_NAME
+    dataType: String
+    length: 100
+    mandatory: false
+    searchable: true
+    description: "Nom de la rue ou avenue"
+
+  - _type: EntityAttribute
+    _name: StreetNumber
+    label: Numéro de rue
+    physicalName: STREET_NUMBER
+    dataType: String
+    length: 20
+    mandatory: false
+    searchable: true
+    description: "Numéro de rue (peut inclure des lettres comme 15A, 2B)"
+
+  - _type: EntityAttribute
+    _name: PostalCode
+    label: Code Postal
+    physicalName: POSTAL_CODE
+    dataType: String
+    length: 4
+    mandatory: false
+    searchable: true
+    description: "Code postal"
+    
+
+  - _type: EntityAttribute
+    _name: City
+    label: Ville/Localité
+    physicalName: CITY
+    dataType: String
+    length: 100
+    mandatory: false
+    searchable: true
+    description: "Ville ou localité"
+
+  - _type: EntityAttribute
+    _name: Canton
+    label: Canton
+    physicalName: CANTON_CODE
+    dataType: PersonModel.list_of_values.Canton
+    length: 2
+    mandatory: false
+    searchable: true
+    description: "Code du canton (VD, GE, etc.)"

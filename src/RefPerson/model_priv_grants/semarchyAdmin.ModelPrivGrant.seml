@@ -1,5 +1,5 @@
 _type: ModelPrivGrant
-_package: PersonModel.model_priv_grants
+_package: RefPerson.model_priv_grants
 _name: semarchyAdmin
 roleName: semarchyAdmin
 label: semarchy Admin

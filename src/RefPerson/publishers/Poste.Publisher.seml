@@ -1,0 +1,6 @@
+_name: Poste
+_type: Publisher
+_package: RefPerson.publishers
+label: La Poste
+active: true
+code: POSTE
