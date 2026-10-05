@@ -4,3 +4,4 @@ _package: RefPerson.publishers
 label: Impots
 active: true
 code: IMPOTS
+color: mr:blue

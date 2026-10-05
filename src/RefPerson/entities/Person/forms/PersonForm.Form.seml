@@ -1,0 +1,14 @@
+_package: RefPerson.entities.Person.forms
+_type: Form
+_name: PersonForm
+entity: RefPerson.entities.Person.Person
+default: false
+formTabs:
+  - _type: FormTab
+    _name: PersonFormTab1
+    label: Personne
+    description: ""
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content: []

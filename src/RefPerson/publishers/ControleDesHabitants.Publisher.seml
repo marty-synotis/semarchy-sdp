@@ -4,3 +4,4 @@ _package: RefPerson.publishers
 label: Controle Des Habitants
 active: true
 code: CONTROLE_DES_HABITANTS
+color: mr:red

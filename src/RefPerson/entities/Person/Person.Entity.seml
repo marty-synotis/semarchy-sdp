@@ -1,4 +1,4 @@
-_package: RefPerson.entities
+_package: RefPerson.entities.Person
 _type: Entity
 _name: Person
 label: Personne
@@ -79,7 +79,7 @@ attributes:
     mandatoryValidationLabel: "Address is mandatory"
     searchable: true
     description: "Adresse principale de la personne"
-    lovValidationScope: PRE_CONSO
+    lovValidationScope: PRE_POST
 
   # -- Attributs supplémentaires --
   - _type: EntityAttribute
@@ -134,7 +134,7 @@ attributes:
     description: "Date de la dernière mise à jour"
     precision: 0
 
-primaryKey: RefPerson.entities.Person.PersonId
+primaryKey: RefPerson.entities.Person.Person.PersonId
 sourceIdGeneration:
   mode: SEQUENCE
   startWith: 1
@@ -165,7 +165,7 @@ matcher:
     - _type: SemQLMatchRule
       _name: SimilarNameMatch
       label: Match Similarité Nom Prénom
-      condition: SEM_EDIT_DISTANCE_SIMILARITY(Record1.LastName, Record2.LastName) > 0.85 AND SEM_EDIT_DISTANCE_SIMILARITY(Record1.FirstName, Record2.FirstName) > 0.85
+      condition: SEM_EDIT_DISTANCE_SIMILARITY(Record1.LastName, Record2.LastName) > 85 AND SEM_EDIT_DISTANCE_SIMILARITY(Record1.FirstName, Record2.FirstName) > 85
       matchScore: 85
       usingMatchOn: false
     # Règle 4: Match sur Nom + Date de Naissance (score moyen-faible)
@@ -179,7 +179,7 @@ matcher:
     - _type: SemQLMatchRule
       _name: SimilarAVSMatch
       label: Match Similarité AVS
-      condition: SEM_EDIT_DISTANCE_SIMILARITY(Record1.AVSNumber, Record2.AVSNumber) > 0.9
+      condition: SEM_EDIT_DISTANCE_SIMILARITY(Record1.AVSNumber, Record2.AVSNumber) > 90
       matchScore: 90
       usingMatchOn: false
   useTransitiveMatchScore: true

@@ -1,0 +1,1040 @@
+{
+    "dataHubModelSchemaVersion": "1.1.0",
+    "dataHubModel": {
+        "qualifiedName": "RefPerson",
+        "label": "Ref Person",
+        "modelConfiguration": {
+            "type": "POSTGRESQL"
+        },
+        "retentionPolicy": {
+            "deletionsDuration": 0,
+            "deletionsType": "FOREVER",
+            "deletionsUnit": "DAY",
+            "historyDuration": 0,
+            "historyType": "FOREVER",
+            "historyUnit": "DAY",
+            "sourceDataDuration": 0,
+            "sourceDataType": "FOREVER",
+            "sourceDataUnit": "DAY",
+            "sourceErrorsDuration": 0,
+            "sourceErrorsType": "FOREVER",
+            "sourceErrorsUnit": "DAY"
+        },
+        "applications": [
+            {
+                "qualifiedName": "RefPerson.applications.DefaultApplication",
+                "activitiesSectionEnabled": true,
+                "applicationTitle": "Default Application",
+                "avatarImageUrl": "images://default/default-data-app-icon.svg",
+                "certificationQueueEnabled": true,
+                "coverImageUrl": "images://default/cover.png",
+                "dashboardEnabled": true,
+                "dashboardScope": "MODEL",
+                "defaultAction": "RefPerson.applications.DefaultApplication.Root",
+                "entitiesListEnabled": true,
+                "errorsNavigationEnabled": true,
+                "favIcon": "images://default/dm-favicon.svg",
+                "historyBrowsingEnabled": false,
+                "historyBrowsingRequiredRole": "",
+                "homeSectionEnabled": true,
+                "lineageEnabled": true,
+                "logoUrl": "images://default/semarchy-logo-navy.svg",
+                "visibility": "VISIBLE",
+                "label": "Default Application",
+                "sortStrategy": "POSITION",
+                "documentationConfig": {
+                    "documentation": ""
+                },
+                "globalSearchConfig": {
+                    "displaySearchForDropdown": true,
+                    "sortBoViewsAlphabetically": true
+                },
+                "navigationConfig": {
+                    "navigationGroups": [
+                        {
+                            "qualifiedName": "RefPerson.applications.DefaultApplication.RootFolder",
+                            "_type": "FolderNavigationGroup",
+                            "dividerVisible": false,
+                            "labelVisible": false,
+                            "position": 0,
+                            "underlyingFolder": "RefPerson.applications.DefaultApplication.Root"
+                        }
+                    ]
+                },
+                "abstractAppActions": [
+                    {
+                        "qualifiedName": "RefPerson.applications.DefaultApplication.Root",
+                        "_type": "FolderAction",
+                        "useCustomLabel": true,
+                        "image": "images://mdi/folder.svg",
+                        "imageAlign": "MIDDLE_CENTER",
+                        "imageMode": "FIT",
+                        "label": "Root Folder"
+                    },
+                    {
+                        "qualifiedName": "RefPerson.applications.DefaultApplication.Root.GlobalSearch",
+                        "posInFolder": 0,
+                        "parentFolder": "RefPerson.applications.DefaultApplication.Root",
+                        "_type": "GlobalSearchAction",
+                        "useCustomLabel": false,
+                        "imageAlign": "MIDDLE_CENTER",
+                        "imageMode": "FIT"
+                    },
+                    {
+                        "qualifiedName": "RefPerson.applications.DefaultApplication.Root.MyTasks",
+                        "posInFolder": 1,
+                        "parentFolder": "RefPerson.applications.DefaultApplication.Root",
+                        "_type": "MyTasksAction",
+                        "useCustomLabel": false,
+                        "imageAlign": "MIDDLE_CENTER",
+                        "imageMode": "FIT",
+                        "badgeVisible": false
+                    },
+                    {
+                        "qualifiedName": "RefPerson.applications.DefaultApplication.Root.Entities",
+                        "posInFolder": 2,
+                        "parentFolder": "RefPerson.applications.DefaultApplication.Root",
+                        "_type": "BrowseEntitiesFolderAction",
+                        "useCustomLabel": false,
+                        "imageAlign": "MIDDLE_CENTER",
+                        "imageMode": "FIT",
+                        "lineageEnabled": true
+                    }
+                ]
+            }
+        ],
+        "complexTypes": [
+            {
+                "qualifiedName": "RefPerson.complex_types.Address",
+                "description": "Type complexe représentant une adresse postale",
+                "label": "Adresse",
+                "definitionAttributes": [
+                    {
+                        "qualifiedName": "RefPerson.complex_types.Address.StreetName",
+                        "_type": "DefinitionAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "multiValued": false,
+                        "physicalColName": "STREET_NAME",
+                        "valueSeparator": "",
+                        "description": "Nom de la rue ou avenue",
+                        "label": "Rue/Avenue",
+                        "length": 100,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.complex_types.Address.StreetNumber",
+                        "_type": "DefinitionAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "multiValued": false,
+                        "physicalColName": "STREET_NUMBER",
+                        "valueSeparator": "",
+                        "description": "Numéro de rue (peut inclure des lettres comme 15A, 2B)",
+                        "label": "Numéro de rue",
+                        "length": 20,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.complex_types.Address.PostalCode",
+                        "_type": "DefinitionAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "multiValued": false,
+                        "physicalColName": "POSTAL_CODE",
+                        "valueSeparator": "",
+                        "description": "Code postal",
+                        "label": "Code Postal",
+                        "length": 4,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.complex_types.Address.City",
+                        "_type": "DefinitionAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "multiValued": false,
+                        "physicalColName": "CITY",
+                        "valueSeparator": "",
+                        "description": "Ville ou localité",
+                        "label": "Ville/Localité",
+                        "length": 100,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.complex_types.Address.Canton",
+                        "_type": "DefinitionAttribute",
+                        "abstractAtomicType": "RefPerson.list_of_values.Canton",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "multiValued": false,
+                        "physicalColName": "CANTON_CODE",
+                        "valueSeparator": "",
+                        "description": "Code du canton (VD, GE, etc.)",
+                        "label": "Canton",
+                        "length": 2,
+                        "searchable": true
+                    }
+                ]
+            }
+        ],
+        "sqlFunctions": [],
+        "databaseViews": [],
+        "enricherCaches": [],
+        "lovTypes": [
+            {
+                "qualifiedName": "RefPerson.list_of_values.Canton",
+                "_type": "LOVType",
+                "description": "Données des cantons suisses",
+                "label": "Cantons Suisses",
+                "validationLabel": "",
+                "length": 2,
+                "lovValues": [
+                    {
+                        "description": "",
+                        "label": "Zürich",
+                        "code": "ZH"
+                    },
+                    {
+                        "description": "",
+                        "label": "Berne",
+                        "code": "BE"
+                    },
+                    {
+                        "description": "",
+                        "label": "Lucerne",
+                        "code": "LU"
+                    },
+                    {
+                        "description": "",
+                        "label": "Uri",
+                        "code": "UR"
+                    },
+                    {
+                        "description": "",
+                        "label": "Schwyz",
+                        "code": "SZ"
+                    },
+                    {
+                        "description": "",
+                        "label": "Obwald",
+                        "code": "OW"
+                    },
+                    {
+                        "description": "",
+                        "label": "Nidwald",
+                        "code": "NW"
+                    },
+                    {
+                        "description": "",
+                        "label": "Glaris",
+                        "code": "GL"
+                    },
+                    {
+                        "description": "",
+                        "label": "Zoug",
+                        "code": "ZG"
+                    },
+                    {
+                        "description": "",
+                        "label": "Fribourg",
+                        "code": "FR"
+                    },
+                    {
+                        "description": "",
+                        "label": "Soleure",
+                        "code": "SO"
+                    },
+                    {
+                        "description": "",
+                        "label": "Bâle-Ville",
+                        "code": "BS"
+                    },
+                    {
+                        "description": "",
+                        "label": "Bâle-Campagne",
+                        "code": "BL"
+                    },
+                    {
+                        "description": "",
+                        "label": "Schaffhouse",
+                        "code": "SH"
+                    },
+                    {
+                        "description": "",
+                        "label": "Appenzell Rhodes-Extérieures",
+                        "code": "AR"
+                    },
+                    {
+                        "description": "",
+                        "label": "Appenzell Rhodes-Intérieures",
+                        "code": "AI"
+                    },
+                    {
+                        "description": "",
+                        "label": "Saint-Gall",
+                        "code": "SG"
+                    },
+                    {
+                        "description": "",
+                        "label": "Grisons",
+                        "code": "GR"
+                    },
+                    {
+                        "description": "",
+                        "label": "Argovie",
+                        "code": "AG"
+                    },
+                    {
+                        "description": "",
+                        "label": "Thurgovie",
+                        "code": "TH"
+                    },
+                    {
+                        "description": "",
+                        "label": "Tessin",
+                        "code": "TI"
+                    },
+                    {
+                        "description": "",
+                        "label": "Vaud",
+                        "code": "VD"
+                    },
+                    {
+                        "description": "",
+                        "label": "Valais",
+                        "code": "VS"
+                    },
+                    {
+                        "description": "",
+                        "label": "Neuchâtel",
+                        "code": "NE"
+                    },
+                    {
+                        "description": "",
+                        "label": "Genève",
+                        "code": "GE"
+                    },
+                    {
+                        "description": "",
+                        "label": "Jura",
+                        "code": "JU"
+                    }
+                ]
+            }
+        ],
+        "modelDiagrams": [],
+        "modelEditionVariables": [],
+        "modelJobs": [],
+        "modelPrivGrants": [
+            {
+                "qualifiedName": "RefPerson.model_priv_grants.semarchyAdmin",
+                "allowApiPublishingAsUser": true,
+                "dataAdminRole": true,
+                "integrationWsRole": true,
+                "label": "semarchy Admin",
+                "roleName": "semarchyAdmin"
+            }
+        ],
+        "namedQueries": [],
+        "publishers": [
+            {
+                "qualifiedName": "RefPerson.publishers.ControleDesHabitants",
+                "active": true,
+                "code": "CONTROLE_DES_HABITANTS",
+                "color": "mr:red",
+                "label": "Controle Des Habitants"
+            },
+            {
+                "qualifiedName": "RefPerson.publishers.Impots",
+                "active": true,
+                "code": "IMPOTS",
+                "color": "mr:blue",
+                "label": "Impots"
+            },
+            {
+                "qualifiedName": "RefPerson.publishers.Poste",
+                "active": true,
+                "code": "POSTE",
+                "color": "mr:green",
+                "label": "La Poste"
+            }
+        ],
+        "referenceRels": [],
+        "userDefinedTypes": [],
+        "workflows": [],
+        "entities": [
+            {
+                "qualifiedName": "RefPerson.entities.Person.Person",
+                "dataEntryAllowed": true,
+                "historizeGolden": true,
+                "historizeMaster": true,
+                "description": "Répertoire des personnes physiques",
+                "documentation": "Entité FuzzyMatch pour gérer le référentiel des personnes avec déduplication automatique",
+                "enableDelete": true,
+                "entityType": "FUZZY_MATCHED",
+                "iconUrl": "images://mdi/account.svg",
+                "label": "Personne",
+                "physicalTableName": "PERSON",
+                "pluralLabel": "Personnes",
+                "pkAttributes": [
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.PersonId",
+                        "_type": "PKAttribute",
+                        "abstractAtomicType": "LongInteger",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "mandatory": true,
+                        "multiValued": false,
+                        "physicalColName": "PERSON_ID",
+                        "valueSeparator": "",
+                        "description": "Identifiant du golden record (généré par le système)",
+                        "fuzzyMatchedEntityGoldenIdGenerationType": "SEQUENCE",
+                        "fuzzyMatchedEntityGoldenIdSequenceStartsWith": 1,
+                        "idGenerationType": "SEQUENCE",
+                        "idSequenceStartsWith": 1,
+                        "label": "ID Personne",
+                        "precision": 1
+                    }
+                ],
+                "atomicAttributes": [
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.LastName",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": true,
+                        "mandatoryValidationLabel": "Nom is mandatory",
+                        "mandatoryValidationScope": "PRE_POST",
+                        "multiValued": false,
+                        "physicalColName": "LAST_NAME",
+                        "valueSeparator": "",
+                        "description": "Nom de famille",
+                        "label": "Nom",
+                        "length": 100,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.FirstName",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": true,
+                        "mandatoryValidationLabel": "Prénom is mandatory",
+                        "mandatoryValidationScope": "PRE_POST",
+                        "multiValued": false,
+                        "physicalColName": "FIRST_NAME",
+                        "valueSeparator": "",
+                        "description": "Prénom",
+                        "label": "Prénom",
+                        "length": 100,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.BirthDate",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Date",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": true,
+                        "mandatoryValidationLabel": "Birthdate is mandatory",
+                        "mandatoryValidationScope": "PRE_POST",
+                        "multiValued": false,
+                        "physicalColName": "BIRTH_DATE",
+                        "valueSeparator": "",
+                        "description": "Date de naissance",
+                        "label": "Date de Naissance",
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.AVSNumber",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": true,
+                        "mandatoryValidationLabel": "AVS number is mandatory",
+                        "mandatoryValidationScope": "PRE_POST",
+                        "multiValued": false,
+                        "physicalColName": "AVS_NUMBER",
+                        "valueSeparator": "",
+                        "description": "Numéro AVS (Assurance Vieillesse et Survivants)",
+                        "label": "Numéro AVS",
+                        "length": 20,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.Employer",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "EMPLOYER",
+                        "valueSeparator": "",
+                        "description": "Nom de l'employeur",
+                        "label": "Employeur",
+                        "length": 200,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.Salary",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Decimal",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "SALARY",
+                        "valueSeparator": "",
+                        "description": "Salaire annuel",
+                        "label": "Salaire",
+                        "precision": 15,
+                        "scale": 2,
+                        "searchable": false
+                    },
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.FullName",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "FULL_NAME",
+                        "valueSeparator": "",
+                        "description": "Nom complet (Prénom + Nom)",
+                        "label": "Nom Complet",
+                        "length": 250,
+                        "searchable": true
+                    },
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.Age",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Integer",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "AGE",
+                        "valueSeparator": "",
+                        "description": "Âge calculé",
+                        "label": "Âge",
+                        "precision": 3,
+                        "searchable": false
+                    },
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.LastUpdateDate",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "Timestamp",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "LAST_UPDATE_DATE",
+                        "valueSeparator": "",
+                        "description": "Date de la dernière mise à jour",
+                        "label": "Date de Dernière Mise à Jour",
+                        "precision": 0,
+                        "searchable": false
+                    }
+                ],
+                "complexAttributes": [
+                    {
+                        "qualifiedName": "RefPerson.entities.Person.Person.Address",
+                        "_type": "ComplexAttribute",
+                        "complexType": "RefPerson.complex_types.Address",
+                        "lovValidationScope": "PRE_POST",
+                        "mandatoryValidationScope": "PRE_POST",
+                        "physicalPrefix": "PER",
+                        "description": "Adresse principale de la personne",
+                        "label": "Adresse"
+                    }
+                ],
+                "matcher": {
+                    "_type": "SemQLMatcher",
+                    "qualifiedName": "RefPerson.entities.Person.Person.PersonMatcher",
+                    "autoConfirmGoldenThreshold": 95,
+                    "autoConfirmSingletons": false,
+                    "mergeThresholdMergingConfirmed": 85,
+                    "mergeThresholdMergingConfirmedWithNewMasters": 90,
+                    "mergeThresholdMergingConfirmedWithUnconfirmed": 80,
+                    "mergeThresholdMergingUnconfirmed": 75,
+                    "mergeThresholdMergingUnconfirmedWithNewMasters": 75,
+                    "mergeThresholdNewGroup": 70,
+                    "mergeThresholdRemergingPreviouslySplit": 95,
+                    "useMultiIterationGrouping": true,
+                    "useTransitiveMatchScore": true,
+                    "description": "Matcher pour dédupliquer les personnes basé sur Nom, Prénom, Date de Naissance et Numéro AVS",
+                    "matchRules": [
+                        {
+                            "qualifiedName": "RefPerson.entities.Person.Person.PersonMatcher.ExactAVSMatch",
+                            "condition": "Record1.AVSNumber = Record2.AVSNumber",
+                            "matchScore": 100,
+                            "label": "Match Exact AVS",
+                            "usingMatchOn": false
+                        },
+                        {
+                            "qualifiedName": "RefPerson.entities.Person.Person.PersonMatcher.FullNameAndBirthMatch",
+                            "condition": "Record1.LastName = Record2.LastName AND Record1.FirstName = Record2.FirstName AND Record1.BirthDate = Record2.BirthDate",
+                            "matchScore": 95,
+                            "label": "Match Nom Prénom Date Naissance",
+                            "usingMatchOn": false
+                        },
+                        {
+                            "qualifiedName": "RefPerson.entities.Person.Person.PersonMatcher.SimilarNameMatch",
+                            "condition": "SEM_EDIT_DISTANCE_SIMILARITY(Record1.LastName, Record2.LastName) > 85 AND SEM_EDIT_DISTANCE_SIMILARITY(Record1.FirstName, Record2.FirstName) > 85",
+                            "matchScore": 85,
+                            "label": "Match Similarité Nom Prénom",
+                            "usingMatchOn": false
+                        },
+                        {
+                            "qualifiedName": "RefPerson.entities.Person.Person.PersonMatcher.NameAndBirthMatch",
+                            "condition": "Record1.LastName = Record2.LastName AND Record1.BirthDate = Record2.BirthDate",
+                            "matchScore": 80,
+                            "label": "Match Nom Date Naissance",
+                            "usingMatchOn": false
+                        },
+                        {
+                            "qualifiedName": "RefPerson.entities.Person.Person.PersonMatcher.SimilarAVSMatch",
+                            "condition": "SEM_EDIT_DISTANCE_SIMILARITY(Record1.AVSNumber, Record2.AVSNumber) > 90",
+                            "matchScore": 90,
+                            "label": "Match Similarité AVS",
+                            "usingMatchOn": false
+                        }
+                    ]
+                },
+                "abstractRowCheckConstraints": [],
+                "actionSets": [],
+                "businessObjectViews": [
+                    {
+                        "qualifiedName": "RefPerson.business_views.GoldenPersonVaud",
+                        "displayRootNodeAs": "LABEL",
+                        "enableHierarchyView": false,
+                        "filter": "1 = 1",
+                        "rootBoViewEntity": "RefPerson.business_views.GoldenPersonVaud.GoldenPersonVaud",
+                        "rootDescription": "",
+                        "rootLabel": "Golden Person Vaud",
+                        "rootPluralLabel": "Golden Persons Vaud",
+                        "useHierarchyOnOpen": false,
+                        "visible": true,
+                        "label": "Golden Person Vaud",
+                        "boViewEntities": [
+                            {
+                                "qualifiedName": "RefPerson.business_views.GoldenPersonVaud.GoldenPersonVaud",
+                                "collection": "RefPerson.collection_views.AllGoldenPersons",
+                                "displayRecordCount": "NEVER",
+                                "enableUserDefinedSort": true,
+                                "entity": "RefPerson.entities.Person.Person",
+                                "form": "RefPerson.forms.PersonForm",
+                                "gridAllowed": true,
+                                "listAllowed": true,
+                                "outlineVisible": false,
+                                "overrideDefaultSort": false,
+                                "sortExpression": "",
+                                "tableAllowed": true,
+                                "displayCard": "RefPerson.display_cards.Person"
+                            }
+                        ]
+                    }
+                ],
+                "collections": [
+                    {
+                        "qualifiedName": "RefPerson.collection_views.AllGoldenPersons",
+                        "default": false,
+                        "gridAllowed": true,
+                        "gridColumns": 4,
+                        "gridTextPosition": "BOTTOM",
+                        "gridTileHeight": "1:1",
+                        "gridTileLines": 1,
+                        "listAllowed": true,
+                        "listItemLines": 1,
+                        "listShowDisplayCardAvatar": false,
+                        "listShowDivider": false,
+                        "tableAllowed": true,
+                        "tableDisplayCardColumnLabel": "",
+                        "tableRowLines": 1,
+                        "tableShowDisplayCard": true,
+                        "description": "Liste de toutes les personnes en statut Golden",
+                        "displayCard": "RefPerson.display_cards.Person",
+                        "tableColumns": [
+                            {
+                                "qualifiedName": "RefPerson.collection_views.AllGoldenPersons.LastName",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": false,
+                                "value": "LastName",
+                                "visibleByDefault": true,
+                                "defaultWidth": 200,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.AllGoldenPersons.FirstName",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 1,
+                                "useCustomLabel": false,
+                                "value": "FirstName",
+                                "visibleByDefault": true,
+                                "defaultWidth": 200,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.AllGoldenPersons.BirthDate",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": false,
+                                "value": "BirthDate",
+                                "visibleByDefault": true,
+                                "defaultWidth": 150,
+                                "valueDataType": "DATE",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.AllGoldenPersons.AVSNumber",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": false,
+                                "value": "AVSNumber",
+                                "visibleByDefault": true,
+                                "defaultWidth": 150,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.AllGoldenPersons.City",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 4,
+                                "useCustomLabel": false,
+                                "value": "Address.City",
+                                "visibleByDefault": true,
+                                "defaultWidth": 200,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.AllGoldenPersons.Canton",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 5,
+                                "useCustomLabel": false,
+                                "value": "Address.Canton",
+                                "visibleByDefault": true,
+                                "defaultWidth": 150,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            }
+                        ]
+                    },
+                    {
+                        "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD",
+                        "default": false,
+                        "gridAllowed": true,
+                        "gridColumns": 4,
+                        "gridTextPosition": "BOTTOM",
+                        "gridTileHeight": "1:1",
+                        "gridTileLines": 1,
+                        "listAllowed": true,
+                        "listItemLines": 1,
+                        "listShowDisplayCardAvatar": false,
+                        "listShowDivider": false,
+                        "tableAllowed": true,
+                        "tableDisplayCardColumnLabel": "",
+                        "tableRowLines": 1,
+                        "tableShowDisplayCard": true,
+                        "description": "Liste des personnes Golden du canton de Vaud",
+                        "displayCard": "RefPerson.display_cards.Person",
+                        "tableColumns": [
+                            {
+                                "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD.LastName",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "useCustomLabel": false,
+                                "value": "LastName",
+                                "visibleByDefault": true,
+                                "defaultWidth": 200,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD.FirstName",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 1,
+                                "useCustomLabel": false,
+                                "value": "FirstName",
+                                "visibleByDefault": true,
+                                "defaultWidth": 200,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD.BirthDate",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 2,
+                                "useCustomLabel": false,
+                                "value": "BirthDate",
+                                "visibleByDefault": true,
+                                "defaultWidth": 150,
+                                "valueDataType": "DATE",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD.AVSNumber",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 3,
+                                "useCustomLabel": false,
+                                "value": "AVSNumber",
+                                "visibleByDefault": true,
+                                "defaultWidth": 150,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD.City",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 4,
+                                "useCustomLabel": false,
+                                "value": "Address.City",
+                                "visibleByDefault": true,
+                                "defaultWidth": 200,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD.PostalCode",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 5,
+                                "useCustomLabel": false,
+                                "value": "Address.PostalCode",
+                                "visibleByDefault": true,
+                                "defaultWidth": 100,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD.Canton",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 6,
+                                "useCustomLabel": false,
+                                "value": "Address.Canton",
+                                "visibleByDefault": true,
+                                "defaultWidth": 150,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            },
+                            {
+                                "qualifiedName": "RefPerson.collection_views.GoldenPersonsByCantonVD.Employer",
+                                "_type": "TableColumn",
+                                "columnAlign": "LEFT",
+                                "componentName": "semTextField",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 7,
+                                "useCustomLabel": false,
+                                "value": "Employer",
+                                "visibleByDefault": true,
+                                "defaultWidth": 200,
+                                "valueDataType": "STRING",
+                                "componentProperties": []
+                            }
+                        ]
+                    }
+                ],
+                "displayCards": [
+                    {
+                        "qualifiedName": "RefPerson.display_cards.Person",
+                        "avatarImageValueInterpreter": "LITERAL",
+                        "default": true,
+                        "primaryImageFallbackValueInterpreter": "LITERAL",
+                        "primaryImageValueInterpreter": "LITERAL",
+                        "avatarImageAlign": "MIDDLE_CENTER",
+                        "avatarImageMode": "FIT",
+                        "avatarImageSourceType": "URL",
+                        "primaryImageAlign": "MIDDLE_CENTER",
+                        "primaryImageFallbackSourceType": "URL",
+                        "primaryImageMode": "FIT",
+                        "primaryImageSourceType": "URL",
+                        "primaryImageValue": "NONE",
+                        "primaryTextExpression": "LastName",
+                        "supportingTextExpression": "FirstName"
+                    }
+                ],
+                "dupsManagers": [],
+                "enrichers": [],
+                "forms": [
+                    {
+                        "default": false,
+                        "qualifiedName": "RefPerson.forms.PersonForm",
+                        "formCharts": [],
+                        "formCollections": [],
+                        "formContainers": [
+                            {
+                                "qualifiedName": "RefPerson.forms.PersonForm.PersonFormTab1",
+                                "_type": "FormTab",
+                                "documentationInterpreter": "LITERAL",
+                                "posInParent": 0,
+                                "visibleValueInterpreter": "LITERAL",
+                                "description": "",
+                                "displayFormTabAs": "LABEL",
+                                "label": "Personne",
+                                "visibleValue": "1"
+                            }
+                        ],
+                        "formDashboards": [],
+                        "formFields": []
+                    }
+                ],
+                "searchForms": [],
+                "steppers": [],
+                "survivorshipRules": [
+                    {
+                        "qualifiedName": "RefPerson.survivorship_rules.DefaultRule",
+                        "_type": "StandardSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "DefaultRule",
+                        "consolidationStrategy": "PREFERRED_PUBLISHER",
+                        "description": "",
+                        "documentation": "",
+                        "publisherRankings": [
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "RefPerson.publishers.Impots",
+                                "rank": 0
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "RefPerson.publishers.ControleDesHabitants",
+                                "rank": 1
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "RefPerson.publishers.Poste",
+                                "rank": 2
+                            }
+                        ],
+                        "defaultRule": true,
+                        "overrideStrategy": "NO_OVERRIDE"
+                    },
+                    {
+                        "qualifiedName": "RefPerson.survivorship_rules.FirstNameRule",
+                        "_type": "StandardSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "FirstNameRule",
+                        "consolidationStrategy": "PREFERRED_PUBLISHER",
+                        "description": "",
+                        "documentation": "",
+                        "publisherRankings": [
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "RefPerson.publishers.ControleDesHabitants",
+                                "rank": 0
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "RefPerson.publishers.Impots",
+                                "rank": 1
+                            },
+                            {
+                                "_type": "ConsoPublisherRanking",
+                                "publisher": "RefPerson.publishers.Poste",
+                                "rank": 2
+                            }
+                        ],
+                        "defaultRule": false,
+                        "attributes": [
+                            {
+                                "attributeName": "FirstName"
+                            }
+                        ],
+                        "overrideStrategy": "NO_OVERRIDE"
+                    },
+                    {
+                        "qualifiedName": "RefPerson.survivorship_rules.IdSurvivorshipRule",
+                        "_type": "IdSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "Id Survivorship Rule",
+                        "consolidationStrategy": "CUSTOM_RANKING",
+                        "description": "",
+                        "documentation": ""
+                    }
+                ],
+                "uniqueKeys": [],
+                "fuzzyLookupRules": []
+            }
+        ]
+    }
+}

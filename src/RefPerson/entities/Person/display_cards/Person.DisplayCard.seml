@@ -1,10 +1,10 @@
 _name: Person
-_package: RefPerson.display_cards
+_package: RefPerson.entities.Person.display_cards
 _type: DisplayCard
-entity: RefPerson.entities.Person
+entity: RefPerson.entities.Person.Person
 default: true
-primaryTextExpression: LastName
-supportingTextExpression: FirstName
+primaryTextExpression: LastName || ' ' || FirstName
+supportingTextExpression: BirthDate || ' (' || Age || ' yeras old)'
 primaryImageValueInterpreter: LITERAL
 primaryImageSourceType: URL
 primaryImageAlign: MIDDLE_CENTER
@@ -15,3 +15,4 @@ avatarImageValueInterpreter: LITERAL
 avatarImageSourceType: URL
 avatarImageAlign: MIDDLE_CENTER
 avatarImageMode: FIT
+primaryImageValue: NONE

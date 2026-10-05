@@ -1,0 +1,24 @@
+_name: GoldenPersonVaud
+_type: BusinessView
+_package: RefPerson.entities.Person.business_views
+label: Golden Person Vaud
+entity: RefPerson.entities.Person.Person
+displayRootNodeAs: LABEL
+enableHierarchyView: false
+rootLabel: "Golden Person Vaud"
+rootPluralLabel: "Golden Persons Vaud"
+useHierarchyOnOpen: false
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: GoldenPersonVaud
+  entity: RefPerson.entities.Person.Person
+  displayCard: RefPerson.entities.Person.display_cards.Person
+  collection: RefPerson.entities.Person.collection_views.GoldenPersonsByCantonVD
+  displayRecordCount: NEVER
+  enableUserDefinedSort: true
+  form: RefPerson.entities.Person.forms.PersonForm
+  gridAllowed: true
+  listAllowed: true
+  outlineVisible: false
+  overrideDefaultSort: false
+  tableAllowed: true

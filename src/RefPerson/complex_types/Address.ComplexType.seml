@@ -49,7 +49,7 @@ attributes:
     _name: Canton
     label: Canton
     physicalName: CANTON_CODE
-    dataType: PersonModel.list_of_values.Canton
+    dataType: RefPerson.list_of_values.Canton
     length: 2
     mandatory: false
     searchable: true

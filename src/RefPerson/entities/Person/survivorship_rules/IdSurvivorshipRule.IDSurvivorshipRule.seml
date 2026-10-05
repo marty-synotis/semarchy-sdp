@@ -1,7 +1,7 @@
-_package: RefPerson.survivorship_rules
+_package: RefPerson.entities.Person.survivorship_rules
 _type: IDSurvivorshipRule
 _name: IdSurvivorshipRule
-entity: RefPerson.entities.Person
+entity: RefPerson.entities.Person.Person
 label: Id Survivorship Rule
 description: ""
 documentation: ""

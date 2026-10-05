@@ -1,0 +1,71 @@
+_package: RefPerson.entities.Person.collection_views
+_type: CollectionView
+_name: AllGoldenPersons
+entity: RefPerson.entities.Person.Person
+description: "Liste de toutes les personnes en statut Golden"
+
+displayCard: RefPerson.entities.Person.display_cards.Person
+
+gridAllowed: true
+tableAllowed: true
+listAllowed: true
+
+gridTileLines: 1
+gridColumns: 4
+
+tableRowLines: 1
+tableShowDisplayCard: true
+listItemLines: 1
+
+default: false
+
+
+tableColumns:
+  - _type: TextColumn
+    _name: LastName
+    columnAlign: LEFT
+    dataType: STRING
+    defaultWidth: 200
+    useCustomLabel: false
+    value: LastName
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: FirstName
+    columnAlign: LEFT
+    dataType: STRING
+    defaultWidth: 200
+    useCustomLabel: false
+    value: FirstName
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: BirthDate
+    columnAlign: LEFT
+    dataType: DATE
+    defaultWidth: 150
+    useCustomLabel: false
+    value: BirthDate
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: AVSNumber
+    columnAlign: LEFT
+    dataType: STRING
+    defaultWidth: 150
+    useCustomLabel: false
+    value: AVSNumber
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: City
+    columnAlign: LEFT
+    dataType: STRING
+    defaultWidth: 200
+    useCustomLabel: false
+    value: Address.City
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: Canton
+    columnAlign: LEFT
+    dataType: STRING
+    defaultWidth: 150
+    useCustomLabel: false
+    value: Address.Canton
+    visibleByDefault: true

@@ -2,163 +2,58 @@ _package: RefPerson.list_of_values
 _type: LOVType
 _name: Canton
 label: Cantons Suisses
-physicalTableName: LOV_CANTON
-lovType: PersonModel.list_of_values.Canton
-iconUrl: images://mdi/map.svg
 description: "Données des cantons suisses"
-records:
-  - _type: LOVRecord
-    values:
-      Code: "ZH"
-      Nom: "Zürich"
-      NomAbrege: "ZH"
-
-  - _type: LOVRecord
-    values:
-      Code: "BE"
-      Nom: "Berne"
-      NomAbrege: "BE"
-
-  - _type: LOVRecord
-    values:
-      Code: "LU"
-      Nom: "Lucerne"
-      NomAbrege: "LU"
-
-  - _type: LOVRecord
-    values:
-      Code: "UR"
-      Nom: "Uri"
-      NomAbrege: "UR"
-
-  - _type: LOVRecord
-    values:
-      Code: "SZ"
-      Nom: "Schwyz"
-      NomAbrege: "SZ"
-
-  - _type: LOVRecord
-    values:
-      Code: "OW"
-      Nom: "Obwald"
-      NomAbrege: "OW"
-
-  - _type: LOVRecord
-    values:
-      Code: "NW"
-      Nom: "Nidwald"
-      NomAbrege: "NW"
-
-  - _type: LOVRecord
-    values:
-      Code: "GL"
-      Nom: "Glaris"
-      NomAbrege: "GL"
-
-  - _type: LOVRecord
-    values:
-      Code: "ZG"
-      Nom: "Zoug"
-      NomAbrege: "ZG"
-
-  - _type: LOVRecord
-    values:
-      Code: "FR"
-      Nom: "Fribourg"
-      NomAbrege: "FR"
-
-  - _type: LOVRecord
-    values:
-      Code: "SO"
-      Nom: "Soleure"
-      NomAbrege: "SO"
-
-  - _type: LOVRecord
-    values:
-      Code: "BS"
-      Nom: "Bâle-Ville"
-      NomAbrege: "BS"
-
-  - _type: LOVRecord
-    values:
-      Code: "BL"
-      Nom: "Bâle-Campagne"
-      NomAbrege: "BL"
-
-  - _type: LOVRecord
-    values:
-      Code: "SH"
-      Nom: "Schaffhouse"
-      NomAbrege: "SH"
-
-  - _type: LOVRecord
-    values:
-      Code: "AR"
-      Nom: "Appenzell Rhodes-Extérieures"
-      NomAbrege: "AR"
-
-  - _type: LOVRecord
-    values:
-      Code: "AI"
-      Nom: "Appenzell Rhodes-Intérieures"
-      NomAbrege: "AI"
-
-  - _type: LOVRecord
-    values:
-      Code: "SG"
-      Nom: "Saint-Gall"
-      NomAbrege: "SG"
-
-  - _type: LOVRecord
-    values:
-      Code: "GR"
-      Nom: "Grisons"
-      NomAbrege: "GR"
-
-  - _type: LOVRecord
-    values:
-      Code: "AG"
-      Nom: "Argovie"
-      NomAbrege: "AG"
-
-  - _type: LOVRecord
-    values:
-      Code: "TH"
-      Nom: "Thurgovie"
-      NomAbrege: "TH"
-
-  - _type: LOVRecord
-    values:
-      Code: "TI"
-      Nom: "Tessin"
-      NomAbrege: "TI"
-
-  - _type: LOVRecord
-    values:
-      Code: "VD"
-      Nom: "Vaud"
-      NomAbrege: "VD"
-
-  - _type: LOVRecord
-    values:
-      Code: "VS"
-      Nom: "Valais"
-      NomAbrege: "VS"
-
-  - _type: LOVRecord
-    values:
-      Code: "NE"
-      Nom: "Neuchâtel"
-      NomAbrege: "NE"
-
-  - _type: LOVRecord
-    values:
-      Code: "GE"
-      Nom: "Genève"
-      NomAbrege: "GE"
-
-  - _type: LOVRecord
-    values:
-      Code: "JU"
-      Nom: "Jura"
-      NomAbrege: "JU"
+length: 2
+lovValues:
+  - code: "ZH"
+    label: "Zürich"
+  - code: "BE"
+    label: "Berne"
+  - code: "LU"
+    label: "Lucerne"
+  - code: "UR"
+    label: "Uri"
+  - code: "SZ"
+    label: "Schwyz"
+  - code: "OW"
+    label: "Obwald"
+  - code: "NW"
+    label: "Nidwald"
+  - code: "GL"
+    label: "Glaris"
+  - code: "ZG"
+    label: "Zoug"
+  - code: "FR"
+    label: "Fribourg"
+  - code: "SO"
+    label: "Soleure"
+  - code: "BS"
+    label: "Bâle-Ville"
+  - code: "BL"
+    label: "Bâle-Campagne"
+  - code: "SH"
+    label: "Schaffhouse"
+  - code: "AR"
+    label: "Appenzell Rhodes-Extérieures"
+  - code: "AI"
+    label: "Appenzell Rhodes-Intérieures"
+  - code: "SG"
+    label: "Saint-Gall"
+  - code: "GR"
+    label: "Grisons"
+  - code: "AG"
+    label: "Argovie"
+  - code: "TH"
+    label: "Thurgovie"
+  - code: "TI"
+    label: "Tessin"
+  - code: "VD"
+    label: "Vaud"
+  - code: "VS"
+    label: "Valais"
+  - code: "NE"
+    label: "Neuchâtel"
+  - code: "GE"
+    label: "Genève"
+  - code: "JU"
+    label: "Jura"

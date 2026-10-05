@@ -4,3 +4,4 @@ _package: RefPerson.publishers
 label: La Poste
 active: true
 code: POSTE
+color: mr:green
