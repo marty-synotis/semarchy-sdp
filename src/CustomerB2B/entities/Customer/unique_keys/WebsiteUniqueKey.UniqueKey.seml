@@ -1,0 +1,9 @@
+_name: WebsiteUniqueKey
+_type: UniqueKey
+_package: CustomerB2B.entities.Customer.unique_keys
+entity: CustomerB2B.entities.Customer.Customer
+label: Website Unique Key
+keyAttributes:
+  - attribute: CustomerB2B.entities.Customer.Customer.Website
+validationLabel: This website is already in use!
+validationScope: POST_CONSO

@@ -1,0 +1,9 @@
+_name: RemovePunctuation
+_type: SemQLEnricher
+_package: CustomerB2B.entities.Customer.enrichers
+entity: CustomerB2B.entities.Customer.Customer
+label: Remove Punctuation
+enricherExecutionScope: PRE_CONSO
+semQlEnricherExpressions:
+  - attributeName: NormalizedName
+    expression: UPPER(REGEXP_REPLACE(CustomerName, '[[:punct:]]', ''))

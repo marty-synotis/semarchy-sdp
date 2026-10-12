@@ -1,0 +1,77 @@
+_package: CustomerB2B.entities.Person
+_type: Entity
+_name: Person
+label: Person
+pluralLabel: Person
+physicalTableName: PERSON
+iconUrl: images://mdi/book.svg
+description: ""
+documentation: ""
+historizeGolden: false
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: PersonID
+    label: Person ID
+    physicalName: PERSON_ID
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    searchable: true
+
+  - _type: EntityAttribute
+    _name: LastName
+    label: Nom
+    physicalName: LAST_NAME
+    dataType: String
+    length: 100
+    mandatory: true
+    mandatoryValidationScope: PRE_POST
+    mandatoryValidationLabel: "Nom is mandatory"
+    searchable: true
+    description: "Nom de famille"
+
+  - _type: EntityAttribute
+    _name: FirstName
+    label: Prénom
+    physicalName: FIRST_NAME
+    dataType: String
+    length: 100
+    mandatory: true
+    mandatoryValidationScope: PRE_POST
+    mandatoryValidationLabel: "Prénom is mandatory"
+    searchable: true
+    description: "Prénom"
+
+sourceIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+primaryKey: CustomerB2B.entities.Person.Person.PersonID
+entityType: FUZZY_MATCHED
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: PersonSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: FullNameRule
+      label: Full Name Rule
+      condition: Record1.LastName = Record2.LastName AND Record1.FirstName = Record2.FirstName
+      matchScore: 100
+      usingMatchOn: false
+      description: Match if 2 records have the same FirstName and LastName
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 0
+  mergeThresholdMergingUnconfirmed: 0
+  mergeThresholdMergingConfirmed: 0
+  mergeThresholdMergingConfirmedWithUnconfirmed: 0
+  mergeThresholdMergingUnconfirmedWithNewMasters: 0
+  mergeThresholdMergingConfirmedWithNewMasters: 0
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false

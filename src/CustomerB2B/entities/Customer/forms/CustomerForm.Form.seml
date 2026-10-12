@@ -1,0 +1,55 @@
+_package: CustomerB2B.entities.Customer.forms
+_type: Form
+_name: CustomerForm
+entity: CustomerB2B.entities.Customer.Customer
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Customer
+    label: Customer
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: CustomerID
+        value: CustomerID
+        useCustomLabel: false
+        dataType: LONG_INTEGER
+      - _type: TextField
+        _name: CustomerName
+        value: CustomerName
+        useCustomLabel: false
+        dataType: STRING
+      - _type: TextField
+        _name: NormalizedName
+        value: NormalizedName
+        useCustomLabel: false
+        dataType: STRING
+      - _type: TextField
+        _name: PhoneticName
+        value: PhoneticName
+        useCustomLabel: false
+        dataType: STRING
+      - _type: TextField
+        _name: Website
+        value: Website
+        useCustomLabel: false
+        dataType: STRING
+      - _type: TextField
+        _name: TotalRevenue
+        value: TotalRevenue
+        useCustomLabel: false
+        dataType: INTEGER
+      - _type: TextField
+        _name: BillingAddress
+        value: BillingAddress
+        useCustomLabel: false
+        dataType: STRING
+      - _type: ReferenceField
+        _name: FDN_Sector
+        value: FDN_Sector
+        useCustomLabel: false
+        dataType: STRING
+        referencedEntity: CustomerB2B.entities.Sector.Sector

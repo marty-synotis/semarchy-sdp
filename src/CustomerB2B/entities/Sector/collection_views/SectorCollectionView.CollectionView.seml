@@ -1,0 +1,34 @@
+_package: CustomerB2B.entities.Sector.collection_views
+_type: CollectionView
+_name: SectorCollectionView
+entity: CustomerB2B.entities.Sector.Sector
+default: true
+displayCard: CustomerB2B.entities.Sector.display_cards.SectorDisplayCard
+gridAllowed: false
+gridColumns: 4
+gridTextPosition: BOTTOM
+gridTileHeight: 1:1
+gridTileLines: 1
+listAllowed: true
+listItemLines: 1
+listShowDisplayCardAvatar: false
+listShowDivider: true
+tableAllowed: true
+tableDisplayCardColumnLabel: Sector
+tableRowLines: 1
+tableShowDisplayCard: true
+tableColumns:
+  - _type: IdColumn
+    _name: SectorID
+    value: SectorID
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true
+  - _type: TextColumn
+    _name: Sectorname
+    value: Sectorname
+    useCustomLabel: false
+    dataType: STRING
+    columnAlign: LEFT
+    visibleByDefault: true

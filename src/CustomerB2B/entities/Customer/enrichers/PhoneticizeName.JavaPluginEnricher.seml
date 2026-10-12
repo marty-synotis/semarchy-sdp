@@ -1,0 +1,23 @@
+_package: CustomerB2B.entities.Customer.enrichers
+_type: JavaPluginEnricher
+_name: PhoneticizeName
+entity: CustomerB2B.entities.Customer.Customer
+label: Phoneticize Customer Name
+description: Phoneticizes the name of the customer using the Double Metaphone algorithm
+condition: 1=1
+enricherExecutionScope: PRE_CONSO
+afterEnrichers: CustomerB2B.entities.Customer.enrichers.RemovePunctuation
+numberOfRetry: 0
+onErrorBehavior: FAIL_JOB
+pluginId: com.semarchy.engine.plugins.convergence.text
+processingBatchSize: 1
+threadPoolSize: 1
+pluginParams:
+  - paramName: PARAM_TRANSFO_TYPE
+    value: PHONETIC DOUBLEMETAPHONE
+pluginInputs:
+  - inputName: IN_TEXT
+    expression: NormalizedName
+pluginOutputs:
+  - attributeName: PhoneticName
+    outputName: OUT_TRANSFORMED_TEXT

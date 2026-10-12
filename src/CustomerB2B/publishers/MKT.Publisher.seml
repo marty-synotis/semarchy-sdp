@@ -1,0 +1,6 @@
+_name: MKT
+_type: Publisher
+_package: CustomerB2B.publishers
+label: Marketing
+active: true
+code: MKT

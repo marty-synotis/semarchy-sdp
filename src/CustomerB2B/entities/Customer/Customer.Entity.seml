@@ -1,0 +1,128 @@
+_package: CustomerB2B.entities.Customer
+_type: Entity
+_name: Customer
+entityType: FUZZY_MATCHED
+physicalTableName: CUSTOMER
+iconUrl: 'images://mdi/people.svg'
+label: Customer
+pluralLabel: Customers
+description: ""
+documentation: ""
+enableDelete: true
+historizeGolden: false
+historizeMaster: false
+
+matcher:
+  _type: SemQLMatcher
+  _name: CustomerMatcher
+  description: CustomerSemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition: Record1.CustomerName = Record2.CustomerName
+      matchScore: 100
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 0
+  mergeThresholdMergingUnconfirmed: 0
+  mergeThresholdMergingConfirmed: 0
+  mergeThresholdMergingConfirmedWithUnconfirmed: 0
+  mergeThresholdMergingUnconfirmedWithNewMasters: 0
+  mergeThresholdMergingConfirmedWithNewMasters: 0
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false
+  
+attributes:
+  - _name: CustomerID
+    _type: EntityAttribute
+    label: Customer ID
+    description: ""
+    documentation: ""
+    physicalName: CUSTOMER_ID
+    dataType: LongInteger
+    precision: 38
+    length: 32
+    goldenAttribute: true
+    i18ned: false
+    mandatory: true
+    valueSeparator: ""
+    searchable: true
+  - _name: CustomerName
+    _type: EntityAttribute
+    label: 'Customer Name'
+    description: ""
+    documentation: 'Customer or Company Name'
+    dataType: String
+    physicalName: CUSTOMER_NAME
+    length: 128
+    mandatory: true
+    mandatoryValidationLabel: "Customer Name cannot be blank!"
+    mandatoryValidationScope: PRE_CONSO
+    valueSeparator: ","
+  - _name: NormalizedName
+    _type: EntityAttribute
+    label: 'Normalized Name'
+    description: ""
+    documentation: 'Customer Name enriched'
+    dataType: String
+    physicalName: NORMALIZED_NAME
+    goldenAttribute: true
+    i18ned: false
+    length: 128
+    mandatory: false
+    mandatoryValidationLabel: ""
+  - _name: PhoneticName
+    _type: EntityAttribute
+    label: 'Phonetic Name'
+    description: ""
+    documentation: 'name transformed using the phonetic metaphone algorithm'
+    dataType: String
+    physicalName: PHONETIC_NAME
+    goldenAttribute: true
+    i18ned: false
+    length: 128
+  - _name: Website
+    _type: EntityAttribute
+    label: Website
+    description: ""
+    documentation: ''
+    dataType: String
+    physicalName: WEBSITE
+    i18ned: false
+    length: 128
+    searchable: true           
+  - _name: TotalRevenue
+    _type: EntityAttribute
+    label: Total Revenue
+    description: ""
+    documentation: ""
+    dataType: Integer
+    physicalName: TOTAL_REVENUE
+    length: 0
+    precision: 10
+    i18ned: false
+    mandatory: false
+    searchable: false      
+  - _name: BillingAddress
+    _type: EntityAttribute
+    description: ''
+    label: Billing Address
+    documentation: Billing Address of the customer
+    physicalName: BIL
+    lovValidationScope: PRE_CONSO
+    # The datatype is missing for Billing Address
+    dataType: CustomerB2B.complex_types.AddressType
+    mandatory: false
+
+primaryKey: CustomerB2B.entities.Customer.Customer.CustomerID
+
+sourceIdGeneration:
+  mode: MANUAL
+  startWith: 1
+
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1

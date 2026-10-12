@@ -1,0 +1,25 @@
+_name: CustomerBelongsToSector
+_type: Reference
+_package: CustomerB2B.references
+label: Customer Belongs To Sector
+deletePropagation: RESTRICT
+fromEntity: CustomerB2B.entities.Customer.Customer
+fromRoleLabel: Customers
+fromRoleName: Customers
+fromRolePluralLabel: Customers
+physicalName: CUSTOMERS_SECTOR
+toEntity: CustomerB2B.entities.Sector.Sector
+toRoleLabel: Sector
+toRoleName: Sector
+toRolePhysicalName: SECTOR
+validationScope: PRE_CONSO
+oneToMany: false
+foreignAttribute:
+  _type: ForeignAttribute
+  entity: CustomerB2B.entities.Sector.Sector
+  _name: Sector
+  label: Sector
+  physicalName: SECTOR
+  searchable: true
+brokenValidationLabel: ""
+mandatoryValidationLabel: ""

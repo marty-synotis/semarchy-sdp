@@ -1,0 +1,6 @@
+_type: DataProductProfile
+_package: CustomerB2B
+_name: CustomerB2B
+label: MBOY Customer B2B
+modelConfiguration:
+  type: POSTGRESQL

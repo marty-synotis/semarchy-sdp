@@ -1,0 +1,64 @@
+_package: CustomerB2B.complex_types
+_type: ComplexType
+_name: AddressType
+label: Address Type
+attributes:
+  - _name: StreetName
+    _type: EntityAttribute
+    label: Street Name
+    description: The name of the street.
+    dataType: String
+    length: 80
+    i18ned: false
+    mandatory: false
+    mandatoryValidationLabel: ""
+    multiValued: false
+    physicalName: STREET_NAME
+    valueSeparator: ""
+    searchable: true
+  - _name: City
+    _type: EntityAttribute
+    label: City
+    dataType: String
+    length: 80
+    i18ned: false
+    mandatory: false
+    mandatoryValidationLabel: ""
+    multiValued: false
+    physicalName: CITY
+    valueSeparator: ""
+    searchable: true
+  - _name: PostalCode
+    _type: EntityAttribute
+    label: Postal Code
+    length: 16
+    # The datatype is missing for PostalCode
+    dataType: CustomerB2B.user_defined_types.PostalCodeType
+    i18ned: false
+    mandatory: false
+    mandatoryValidationLabel: ""
+    multiValued: false
+    physicalName: POSTAL_CODE
+    valueSeparator: ""
+    searchable: true
+  - _name: Country
+    _type: EntityAttribute
+    label: Country
+    # The datatype is missing for Country
+    dataType: CustomerB2B.list_of_values.CountryCodeType
+    i18ned: false
+    mandatory: false
+    mandatoryValidationLabel: ""
+    multiValued: false
+    physicalName: COUNTRY
+    valueSeparator: ""
+    searchable: true
+displayName:
+  _type: ComplexTypeDisplayName
+  _name: AddressType
+  separator: ', '
+  displayNameAttributes:
+    - attribute: CustomerB2B.complex_types.AddressType.StreetName
+    - attribute: CustomerB2B.complex_types.AddressType.City
+    - attribute: CustomerB2B.complex_types.AddressType.Country
+    - attribute: CustomerB2B.complex_types.AddressType.PostalCode

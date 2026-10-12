@@ -1,0 +1,14 @@
+_package: CustomerB2B.entities.Customer.dups_managers
+_type: DupsManager
+_name: ManageDuplicatesOnCustomer
+entity: CustomerB2B.entities.Customer.Customer
+enableMasterValuePicking: true
+displayCard: CustomerB2B.entities.Customer.display_cards.CustomerDisplayCard
+formTab: CustomerB2B.entities.Customer.forms.CustomerForm.Customer
+collectionView: CustomerB2B.entities.Customer.collection_views.CustomerCollectionView
+checkoutCustomSortEnabled: false
+checkoutUserDefinedSortEnabled: true
+checkoutDefaultDisplayType: TABLE
+checkoutDisplayGridAllowed: false
+checkoutDisplayListAllowed: true
+checkoutDisplayTableAllowed: true

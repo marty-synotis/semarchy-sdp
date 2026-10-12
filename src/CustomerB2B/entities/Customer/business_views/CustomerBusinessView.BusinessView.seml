@@ -1,0 +1,37 @@
+_package: CustomerB2B.entities.Customer.business_views
+_type: BusinessView
+_name: CustomerBusinessView
+entity: CustomerB2B.entities.Customer.Customer
+rootLabel: Customers
+rootPluralLabel: Customers
+label: Customer Business View
+displayRootNodeAs: ICON_LABEL
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: Customer
+  entity: CustomerB2B.entities.Customer.Customer
+  actionSet: CustomerB2B.entities.Customer.action_sets.CustomerActionSet
+  collection: CustomerB2B.entities.Customer.collection_views.CustomerCollectionView
+  form: CustomerB2B.entities.Customer.forms.CustomerForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+enableHierarchyView: false
+useHierarchyOnOpen: false

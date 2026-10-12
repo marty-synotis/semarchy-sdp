@@ -1,0 +1,18 @@
+_name: PersonDisplayCard
+_package: CustomerB2B.entities.Person.display_cards
+_type: DisplayCard
+entity: CustomerB2B.entities.Person.Person
+default: true
+primaryTextExpression: "FirstName || ' ' || LastName"
+supportingTextExpression: "' ' || PersonID"
+primaryImageValue: None
+primaryImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT

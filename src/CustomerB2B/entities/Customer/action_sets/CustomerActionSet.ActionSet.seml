@@ -1,0 +1,99 @@
+_package: CustomerB2B.entities.Customer.action_sets
+_type: ActionSet
+_name: CustomerActionSet
+entity: CustomerB2B.entities.Customer.Customer
+label: Customer Action Set
+defaultActionSet: true
+actions:
+  - _type: CreateAction
+    _name: CreateAuthorCustomers
+    label: Create
+    useCustomLabel: true
+    stepper: CustomerB2B.entities.Customer.steppers.AuthorCustomers
+    createMultiple: false
+    createdRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: EditAction
+    _name: EditAuthorCustomers
+    label: Edit
+    useCustomLabel: true
+    stepper: CustomerB2B.entities.Customer.steppers.AuthorCustomers
+    multipleSelectionAllowed: true
+    availableForGoldenData: true
+    availableForMasterData: false
+    availableForErrorData: false
+    waitDialogEnabled: false
+  - _type: MassUpdateAction
+    _name: MassUpdateAuthorCustomers
+    label: Mass Update
+    useCustomLabel: true
+    stepper: CustomerB2B.entities.Customer.steppers.AuthorCustomers
+    availableForGoldenData: true
+    availableForErrorData: false
+    availableForMasterData: false
+    waitDialogEnabled: false
+  - _type: DeleteAction
+    _name: Delete
+    label: Delete
+    useCustomLabel: true
+    multipleSelectionAllowed: true
+    deleteType: HARD_DELETE
+    waitDialogEnabled: false
+    availableForGoldenData: true
+    availableForMasterData: false
+  - _type: ExportAction
+    _name: Export
+    label: Export
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: ImportAction
+    _name: ImportAuthorCustomers
+    label: Import
+    useCustomLabel: true
+    importMode: CREATE_AND_UPDATE
+    stepper: CustomerB2B.entities.Customer.steppers.AuthorCustomers
+    importedRecordType: GOLDEN
+    waitDialogEnabled: false
+    allowOtherPublishers: true
+  - _type: BrowseGraphAction
+    _name: BrowseGraph
+    label: Browse Graph
+    useCustomLabel: true
+    waitDialogEnabled: false
+  - _type: DirectConfirmDupsAction
+    _name: DirectConfirmDuplicates
+    label: Direct Confirm Duplicates
+    useCustomLabel: false
+    waitDialogEnabled: false
+  - _type: ReviewAndConfirm
+    _name: ReviewAndConfirmDuplicatesManageDuplicatesOnCustomer
+    label: Review and Confirm Duplicates
+    useCustomLabel: true
+    dupsManager: CustomerB2B.entities.Customer.dups_managers.ManageDuplicatesOnCustomer
+    enableEdit: true
+    mandateConfirmAll: false
+    waitDialogEnabled: false
+  - _type: MergeOrSplit
+    _name: MergeOrSplitDuplicatesManageDuplicatesOnCustomer
+    label: Merge Or Split Duplicates
+    useCustomLabel: true
+    dupsManager: CustomerB2B.entities.Customer.dups_managers.ManageDuplicatesOnCustomer
+    enableEdit: true
+    waitDialogEnabled: false
+  - _type: ReviewSuggestions
+    _name: ReviewSuggestionsDuplicatesManageDuplicatesOnCustomer
+    label: Review Duplicates Suggestions
+    useCustomLabel: true
+    dupsManager: CustomerB2B.entities.Customer.dups_managers.ManageDuplicatesOnCustomer
+    enableEdit: true
+    waitDialogEnabled: false
+    onAcceptPromptGoldenId: false
+    mandateResolveAllSuggestions: false
+  - _type: ExplainRecordAction
+    _name: ExplainRecord
+    label: Explain Record
+    useCustomLabel: true
+    displayCard: CustomerB2B.entities.Customer.display_cards.CustomerDisplayCard
+    formTab: CustomerB2B.entities.Customer.forms.CustomerForm.Customer
+    waitDialogEnabled: false

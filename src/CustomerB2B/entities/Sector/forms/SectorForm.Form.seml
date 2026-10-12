@@ -1,0 +1,24 @@
+_package: CustomerB2B.entities.Sector.forms
+_type: Form
+_name: SectorForm
+entity: CustomerB2B.entities.Sector.Sector
+default: true
+formTabs:
+  - _type: FormTab
+    _name: Sector
+    label: Sector
+    documentationInterpreter: LITERAL
+    visibleValue: "1"
+    visibleValueInterpreter: LITERAL
+    displayFormTabAs: LABEL
+    content:
+      - _type: IdField
+        _name: SectorID
+        value: SectorID
+        useCustomLabel: false
+        dataType: STRING
+      - _type: TextField
+        _name: Sectorname
+        value: Sectorname
+        useCustomLabel: false
+        dataType: STRING

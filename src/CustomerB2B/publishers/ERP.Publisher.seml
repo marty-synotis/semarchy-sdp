@@ -1,0 +1,6 @@
+_name: ERP
+_type: Publisher
+_package: CustomerB2B.publishers
+label: NetSuiteERP
+active: true
+code: ERP

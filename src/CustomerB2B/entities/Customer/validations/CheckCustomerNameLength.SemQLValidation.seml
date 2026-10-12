@@ -1,0 +1,8 @@
+_name: CheckCustomerNameLength
+_type: SemQLValidation
+_package: CustomerB2B.entities.Customer.validations
+entity: CustomerB2B.entities.Customer.Customer
+label: Check Customer Name Length
+condition: Length(CustomerName) > 1
+validationScope: PRE_CONSO
+validationLabel: Length of Customer Name must be longer than 1 character!

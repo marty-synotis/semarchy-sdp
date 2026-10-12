@@ -1,0 +1,7 @@
+_name: PostalCodeType
+_type: UserDefinedType
+_package: CustomerB2B.user_defined_types
+label: Postal Code Type
+dataType: String
+length: 16
+

@@ -1,0 +1,37 @@
+_package: CustomerB2B.entities.Sector.business_views
+_type: BusinessView
+_name: SectorBusinessView
+entity: CustomerB2B.entities.Sector.Sector
+rootLabel: Sectors
+label: Sector Business View
+rootPluralLabel: Sectors
+displayRootNodeAs: ICON_LABEL
+rootBusinessViewEntity:
+  _type: BusinessViewEntity
+  _name: Sector
+  entity: CustomerB2B.entities.Sector.Sector
+  actionSet: CustomerB2B.entities.Sector.action_sets.SectorActionSet
+  collection: CustomerB2B.entities.Sector.collection_views.SectorCollectionView
+  form: CustomerB2B.entities.Sector.forms.SectorForm
+  outlineVisible: false
+  displayRecordCount: ALWAYS
+  businessEntitySearchConfigs:
+    - _name: TextConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: TEXT
+    - _name: FormConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: BY_FORM
+    - _name: AdvancedConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: ADVANCED
+    - _name: SemqlConfig
+      _type: BusinessEntitySearchTypeConfig
+      searchType: SEMQL
+  overrideDefaultSort: false
+  enableUserDefinedSort: true
+  listAllowed: true
+  tableAllowed: true
+  gridAllowed: true
+enableHierarchyView: false
+useHierarchyOnOpen: false
